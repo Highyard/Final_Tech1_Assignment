@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Phonelist</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"/>
+<div class="container">
+
+    <h1><u>Phonelist</u></h1>
+
+
+    <div></div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Kontakt person</th>
+            <th>CPR</th>
+            <th>Start dato</th>
+            <th>Noter</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="child: ${children}">
+
+            <td th:text="${child.forNavn}"/>
+            <td th:text="${child.efterNavn}"/>
+            <td th:text="${child.kontaktPerson}"/>
+            <td th:text="${child.cpr}"/>
+            <td th:text="${child.startDato}"/>
+            <td th:text="${child.noter}"/>
+
+            <!--PUT DELETE AND EDIT BUTTONS HERE-->
+
+            <!--<td>-->
+                <!--<a class="btn btn-danger" th:href="DELETE HTML HERE"> <button class="btn btn-danger">Delete</button>-->
+                <!--</a>-->
+                <!--<a class="btn btn-warning" th:href="EDIT HTML HERE"> <button class="btn btn-warning">Delete</button>-->
+                <!--</a>-->
+
+            <!--</td>-->
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
